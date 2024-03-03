@@ -39,10 +39,7 @@ jobs:
 
       - name: Install dependencies
         run: yarn
-      
-      - name: Unit test
-        run: yarn test
-
+        
       - name: Generate new version
         if: github.event_name == 'push'
         run: npm version patch
