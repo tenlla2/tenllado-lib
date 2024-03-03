@@ -1,4 +1,5 @@
-name: Generate tag version and push
+name: Generate tag version and publish to npm
+
 on:
   push:
     branches:
@@ -17,57 +18,42 @@ on:
           - major
 
 jobs:
-  version:
-    name: Create new version 
-    
+  version_and_publish:
+    name: Generate version tag and publish to npm
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
         with:
           ref: main
+          
       - run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - name: Use Node.js
+        uses: actions/setup-node@v2
         with:
-          node-version: 16.x
+          node-version: '18.x' # Actualiza la versión de Node.js a una compatible con Husky
           registry-url: https://registry.npmjs.org/
 
       - name: Install dependencies
         run: yarn
+      
+      - name: Unit test
+        run: yarn test
+
+      - name: Generate new version
+        if: github.event_name == 'push'
+        run: npm version patch
 
       - name: Generate new version on Dispatch
         if: ${{ github.event.inputs.version }} != ''
         run: npm version ${{ github.event.inputs.version }}
 
-      - name: Generate new version on Push
-        if: github.event_name == 'push'
-        run: npm version patch
-
       - name: Push new version tag to repository
         run: git push origin main --tags
   
-  build_and_push:
-    runs-on: ubuntu-latest
-    needs: version
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-        with:
-          ref: main
-      
-      - name: Setup node
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16.x
-          registry-url: https://registry.npmjs.org/
-      
-      - name: Install dependencies
-        run: yarn
-
       - name: Build
         run: yarn build
         
