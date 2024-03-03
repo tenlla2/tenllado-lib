@@ -3,7 +3,7 @@ import './Button.css'
 
 export interface ButtonProps {
   text: string
-  className: string
+  className?: string
   onClick: () => void
   disabled?: boolean
 }
