@@ -14,9 +14,13 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "vite-plugin-dts": "^3.7.3",
+    "vite-plugin-linter": "^2.1.1",
+    "vite-tsconfig-paths": "^4.3.1"
   },
   "devDependencies": {
+    "@types/node": "^20.11.24",
     "@types/react": "^18.2.56",
     "@types/react-dom": "^18.2.19",
     "@typescript-eslint/eslint-plugin": "^7.1.0",
@@ -32,5 +36,30 @@
     "react-hooks": "^1.0.1",
     "typescript": "^5.2.2",
     "vite": "^5.1.4"
-  }
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/tenlado-lib.es.js",
+      "require": "./dist/tenlado-lib.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "main": "./dist/tenlado-lib.umd.js",
+  "module": "./dist/tenlado-lib.es.js",
+  "types": "./dist/index.d.ts",
+  "peerDependencies": {
+    "react": "16.8.0 || >=17.x",
+    "react-dom": "16.8.0 || >=17.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tenlla2/tenllado-lib"
+  },
+  "keywords": [],
+  "author": "Antonio Tenllado",
+  "bugs": {
+    "url": "https://github.com/tenlla2/tenllado-lib/issues"
+  },
+  "homepage": "https://github.com/tenlla2/tenllado-lib#readme",
+  "license": "MIT"
 }
