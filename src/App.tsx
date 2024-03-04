@@ -1,5 +1,4 @@
-import './App.css'
-import { Table } from './components'
+import { Table } from '@/components'
 import { COLUMNS, DATA, PAGINATION } from '@/mocks'
 
 function App() {

@@ -8,7 +8,9 @@ export const Table: React.FC<TableProps> = ({ data, columns, tableClassName, pag
       <thead>
         <tr>
           {columns.map((column) => (
-            <th key={column}>{column}</th>
+            <th key={column} data-testid={`column-header-${column}`}>
+              {column}
+            </th>
           ))}
         </tr>
       </thead>
