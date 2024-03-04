@@ -1,12 +1,6 @@
 import React from 'react'
 import './Button.css'
-
-export interface ButtonProps {
-  text: string
-  className?: string
-  onClick: () => void
-  disabled?: boolean
-}
+import type { ButtonProps } from './Button.model'
 
 export const Button: React.FC<ButtonProps> = ({
   text,
