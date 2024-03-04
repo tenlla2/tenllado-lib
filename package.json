@@ -38,22 +38,24 @@
     "sass": "^1.71.1",
     "typescript": "^5.2.2",
     "vite": "^5.1.4",
+    "vite-plugin-dts": "^3.7.3",
     "vitest": "^1.3.1"
   },
+  "main": "dist/tenllado-lib.umd.js",
+  "module": "dist/tenllado-lib.es.js",
+  "types": "dist/tenllado-lib.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/tenlado-lib.es.js",
-      "require": "./dist/tenlado-lib.umd.js"
-    },
-    "./dist/style.css": "./dist/style.css"
+      "import": "./dist/tenllado-lib.es.js",
+      "require": "./dist/tenllado-lib.umd.js",
+      "types": "./dist/tenllado-lib.d.ts",
+      "default": "./dist/tenllado-lib.es.js"
+    }
   },
-  "main": "./dist/tenlado-lib.umd.js",
-  "module": "./dist/tenlado-lib.es.js",
-  "types": "./dist/index.d.ts",
-  "peerDependencies": {
-    "react": "16.8.0 || >=17.x",
-    "react-dom": "16.8.0 || >=17.x"
-  },
+  "files": [
+    "dist",
+    "package.json"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/tenlla2/tenllado-lib"
