@@ -6,9 +6,12 @@ import { resolve } from 'path'
 import dts from 'vite-plugin-dts'
 
 export default defineConfig({
-  plugins: [react(),dts({
-    insertTypesEntry: true,
-  }),],
+  plugins: [
+    react(),
+    dts({
+      insertTypesEntry: true,
+    }),
+  ],
   resolve: {
     alias: [{ find: '@', replacement: resolve(__dirname, 'src') }],
   },
@@ -27,18 +30,17 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: resolve(__dirname, "src/components/index.ts"),
-      name: "tenllado-lib",
-      formats: ["es", "umd"],
+      entry: resolve(__dirname, 'src/components/index.ts'),
+      name: 'tenllado-lib',
+      formats: ['es', 'umd'],
       fileName: (format) => `tenllado-lib.${format}.js`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'styled-components'],
+      external: ['react', 'react-dom'],
       output: {
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
-          'styled-components': 'styled',
         },
       },
     },
