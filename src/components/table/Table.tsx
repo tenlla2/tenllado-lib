@@ -1,6 +1,5 @@
-import './Table.css'
-import { Button } from '../button/Button'
-import { Pagination } from '../index'
+import './Table.scss'
+import { Button, Pagination } from '@/components/index'
 import type { TableProps } from './Table.model'
 
 export const Table: React.FC<TableProps> = ({ data, columns, tableClassName, pagination }) => {

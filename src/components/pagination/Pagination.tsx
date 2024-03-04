@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from '../button/Button' // Importa el componente Button
-import './Pagination.css'
+import './Pagination.scss'
 import type { PaginationProps } from './Pagination.model'
 
 export const Pagination: React.FC<PaginationProps> = ({

@@ -1,0 +1,41 @@
+.pokemon-table {
+  width: 100%;
+  border-collapse: collapse;
+  z-index: 0;
+  border-radius: 15px;
+
+  th,
+  td {
+    border: 1px solid $dark-color;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: $white-color;
+    width: 150px; /* Ancho fijo para las celdas */
+  }
+
+  th {
+    background-color: $table-primary-color;
+    font-size: 20px;
+  }
+
+  td {
+    background-color: $table-secondary-color;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: left;
+
+    &.details {
+      text-align: center;
+    }
+  }
+}
+
+.pagination-footer {
+  padding: 10px 10px 10px 0px;
+  display: flex;
+  justify-content: flex-end;
+  background-color: $table-primary-color;
+  border: 1px solid $dark-color;
+  border-bottom: 5px;
+}
