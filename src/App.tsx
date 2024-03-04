@@ -1,8 +1,10 @@
-import './App.css'
-import { Button } from './components'
+import { Table } from '@/components'
+import { COLUMNS, DATA, PAGINATION } from '@/mocks'
 
 function App() {
-  return <Button text="test" onClick={() => {}} />
+  return (
+    <Table columns={COLUMNS} data={DATA} tableClassName="pokemon-table" pagination={PAGINATION} />
+  )
 }
 
 export default App

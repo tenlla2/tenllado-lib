@@ -1,0 +1,10 @@
+.pagination {
+    display: flex;
+
+    &__page {
+        display: flex;
+        padding-inline: 20px;
+        color: $white-color;
+        align-items: center;
+    }
+}

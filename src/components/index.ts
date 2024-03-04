@@ -1,2 +1,6 @@
+export { Pagination } from './pagination/Pagination'
+export type { PaginationProps } from './pagination/Pagination.model'
 export { Button } from './button/Button'
-export type { ButtonProps } from './button/Button'
+export type { ButtonProps } from './button/Button.model'
+export { Table } from './table/Table'
+export type { TableProps } from './table/Table.model'
