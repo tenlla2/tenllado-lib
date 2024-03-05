@@ -42,16 +42,6 @@ jobs:
         
       - name: Launch testing
         run: yarn test
-
-      - name: Generate new version
-        if: github.event_name == 'push'
-        run: npm version patch
-
-      - name: Generate new version on Dispatch
-        run: npm version ${{ github.event.inputs.version }}
-
-      - name: Push new version tag to repository
-        run: git push origin main --tags
   
       - name: Build
         run: yarn build
