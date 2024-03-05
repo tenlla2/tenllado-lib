@@ -1,4 +1,4 @@
-name: Generate tag version and publish to npm
+name: Publish to npm
 
 on:
   push:
@@ -19,7 +19,7 @@ on:
 
 jobs:
   version_and_publish:
-    name: Generate version tag and publish to npm
+    name: Generate and publish to npm
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
