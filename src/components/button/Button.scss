@@ -2,6 +2,7 @@
   font-weight: 600;
   color: $white-color;
   cursor: pointer;
+  background-color: $semi-dark-color;
 
   &__modal {
     padding: 4%;
@@ -40,7 +41,6 @@
     border: 2px solid $dark-color;
     border-radius: 5px;
     font-size: 14px;
-    background-color: $semi-dark-color;
 
     &:hover {
       background-color: $primary-color;
