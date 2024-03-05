@@ -48,7 +48,6 @@ jobs:
         run: npm version patch
 
       - name: Generate new version on Dispatch
-        if: ${{ github.event.inputs.version }} != ''
         run: npm version ${{ github.event.inputs.version }}
 
       - name: Push new version tag to repository
