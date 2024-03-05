@@ -10,7 +10,7 @@ const meta = {
     layout: 'centered',
   },
   tags: ['autodocs'],
-} as Meta<typeof Pagination>
+} satisfies Meta<typeof Pagination>
 
 export default meta
 type Story = StoryObj<typeof meta>

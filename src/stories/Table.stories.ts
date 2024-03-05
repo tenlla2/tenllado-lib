@@ -10,10 +10,7 @@ const meta = {
     layout: 'centered',
   },
   tags: ['autodocs'],
-  argTypes: {
-    onClick: { action: 'clicked' },
-  },
-} as Meta<typeof Table>
+} satisfies Meta<typeof Table>
 
 export default meta
 type Story = StoryObj<typeof meta>
